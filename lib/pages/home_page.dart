@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
       body:Stack(children: <Widget>[
         _featuredGamesWidget(),
         _gradientBoxWidget(),
+        _topLayerWidget(),
 
       ],
 
@@ -65,5 +66,39 @@ class _HomePageState extends State<HomePage> {
       ),
     ),
     );
+  }
+  Widget _topLayerWidget(){
+    return Padding(
+      padding: const EdgeInsets.symmetric(),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          _topBarWidget(),
+          
+        ]
+      ),
+    );
+  }
+  Widget _topBarWidget(){
+    return SizedBox(height: _deviceHeight*0.15,width: _deviceWidth,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Icon(Icons.menu,color: Colors.white,size: 30,),
+        Row(
+          children: [
+            SizedBox(width: _deviceWidth*0.03,),
+            Icon(Icons.search,color: Colors.white,size: 30,),
+            SizedBox(width: _deviceWidth*0.03,),
+            Icon(Icons.notifications,color: Colors.white,size: 30,),
+            SizedBox(width: _deviceWidth*0.03,),
+          ],
+        ),
+      ],
+    ),);
   }
 }
