@@ -33,7 +33,7 @@ List<Game> games = [
     "4A Games",
   ),
   Game(
-    "Tom Clancy's The Division 2",
+    "The Division 2",
     GameImage(
         "https://cdn.division.zone/uploads/2019/03/tc-the-division-2-preload-start-times-sizes-header.jpg",
         ""),

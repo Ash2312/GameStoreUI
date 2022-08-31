@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gamify_app/data.dart';
+import 'package:gamify_app/widgets/scrollable_games_widget.dart';
 import '';
 
 class HomePage extends StatefulWidget {
@@ -85,11 +86,14 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           _topBarWidget(),
-          SizedBox(height: _deviceHeight*0.2,),
+          SizedBox(height: _deviceHeight*0.15,),
           _featuredGamesInfoWidget(),
+          ScrollableGameWidget(_deviceHeight*0.2, _deviceWidth, true, games),
+                    ScrollableGameWidget(_deviceHeight*0.2, _deviceWidth, true, games),
           
-        ]
+        ],
       ),
+
     );
   }
   Widget _topBarWidget(){
@@ -113,7 +117,7 @@ class _HomePageState extends State<HomePage> {
     ),);
   }
   Widget _featuredGamesInfoWidget(){
-    return SizedBox(height: _deviceHeight*0.12,width:_deviceWidth,
+    return SizedBox(height: _deviceHeight*0.11,width:_deviceWidth,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
