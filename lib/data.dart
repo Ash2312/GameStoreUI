@@ -60,15 +60,15 @@ List<Game> games2 = [
     "Rockstar Games",
   ),
   Game(
-    "The Last of Us Part II",
-    GameImage("https://mvpo.us/img/P6253.jpg", ""),
+    "The Last of Us II",
+    GameImage("https://m.media-amazon.com/images/I/91UlT9DgjVL._AC_SL1500_.jpg", ""),
     "",
     "Naughty Dog",
   ),
   Game(
-    "Sekiro: Shadows Die Twice",
+    "Sekiro",
     GameImage(
-        "https://onlysp.escapistmagazine.com/wp-content/uploads/2019/03/Sekiro-Shadows-Die-Twice-logo-art.jpg",
+        "https://m.media-amazon.com/images/M/MV5BNTY4NjdjZjYtOThjYS00MGExLTllM2EtZjM5ODcyYWJmMjJjXkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_.jpg",
         ""),
     "",
     "From Software",

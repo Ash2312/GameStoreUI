@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../data.dart';
@@ -32,7 +34,7 @@ class ScrollableGameWidget extends StatelessWidget {
                   NetworkImage(_game.coverImage.url))
                 ),
                 ),
-                Text(_game.title,maxLines:2,)
+                Text(_game.title,maxLines:2,style: TextStyle(fontSize: _height*0.08),)
               ],
             ),
           );

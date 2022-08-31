@@ -86,14 +86,14 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           _topBarWidget(),
-          SizedBox(height: _deviceHeight*0.15,),
+          SizedBox(height: _deviceHeight*0.12,),
           _featuredGamesInfoWidget(),
           ScrollableGameWidget(_deviceHeight*0.2, _deviceWidth, true, games),
-                    ScrollableGameWidget(_deviceHeight*0.2, _deviceWidth, true, games),
-          
+          _featuredGamesBanner(), 
+          ScrollableGameWidget(_deviceHeight*0.2, _deviceWidth, true, games2),     
         ],
-      ),
 
+      ),
     );
   }
   Widget _topBarWidget(){
@@ -114,10 +114,11 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ],
-    ),);
+    ),
+    );
   }
   Widget _featuredGamesInfoWidget(){
-    return SizedBox(height: _deviceHeight*0.11,width:_deviceWidth,
+    return SizedBox(height: _deviceHeight*0.12,width:_deviceWidth,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -130,6 +131,20 @@ class _HomePageState extends State<HomePage> {
           ),),
           Row(),
         ],
+      ),
+    );
+  }
+  Widget _featuredGamesBanner(){
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        height: _deviceHeight*0.16,width: _deviceWidth*2,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25),
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: NetworkImage(featuredGames[2].coverImage.url))
+        ),
       ),
     );
   }
