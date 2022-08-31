@@ -22,7 +22,8 @@ class _HomePageState extends State<HomePage> {
     _deviceWidth=MediaQuery.of(context).size.width;
     return Scaffold(
       body:Stack(children: <Widget>[
-        _featuredGamesWidget()
+        _featuredGamesWidget(),
+        _gradientBoxWidget(),
 
       ],
 
@@ -45,6 +46,24 @@ class _HomePageState extends State<HomePage> {
     )
         );
       }).toList(),),
+    );
+  }
+  Widget _gradientBoxWidget(){
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Container(
+      height: _deviceHeight*0.8,
+      width: _deviceWidth,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(colors:[Color.fromRGBO(35, 45, 60, 1),
+        Colors.transparent
+        ,],
+
+        stops: [0.65,1],
+        begin: Alignment.bottomCenter,
+        end: Alignment.topCenter) 
+      ),
+    ),
     );
   }
 }
