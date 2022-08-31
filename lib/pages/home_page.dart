@@ -12,9 +12,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var _deviceHeight;
   var _deviceWidth;
+  var _selectedPage;
+
   @override
   void initState(){
     super.initState();
+    _selectedPage=0;
   }
   @override
   Widget build(BuildContext context) {
@@ -35,6 +38,12 @@ class _HomePageState extends State<HomePage> {
   Widget _featuredGamesWidget(){
     return SizedBox(height:_deviceHeight*0.5,width:_deviceWidth,
     child: PageView(
+      onPageChanged: (_index){
+        setState(() {
+          _selectedPage=_index;
+        });
+
+      },
       scrollDirection: Axis.horizontal,
       children: featuredGames.map((_game){
         return Container(
@@ -69,13 +78,15 @@ class _HomePageState extends State<HomePage> {
   }
   Widget _topLayerWidget(){
     return Padding(
-      padding: const EdgeInsets.symmetric(),
+      padding: const EdgeInsets.all(8),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           _topBarWidget(),
+          SizedBox(height: _deviceHeight*0.2,),
+          _featuredGamesInfoWidget(),
           
         ]
       ),
@@ -100,5 +111,22 @@ class _HomePageState extends State<HomePage> {
         ),
       ],
     ),);
+  }
+  Widget _featuredGamesInfoWidget(){
+    return SizedBox(height: _deviceHeight*0.12,width:_deviceWidth,
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(featuredGames[_selectedPage].title
+          ,style: TextStyle(
+            fontSize: 35,
+            fontWeight: FontWeight.bold
+          ),),
+          Row(),
+        ],
+      ),
+    );
   }
 }
